@@ -1,0 +1,28 @@
+---
+# Deploy two pods:
+# One pod with a label of “Tier = Web”
+# One pod with a label of “Tier = App”
+# Use any container image you see fit.
+# Verify the labels are applied.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: App
+  labels:
+    Tier: App
+spec:
+  container:
+  - name: busybox
+    image: busybox
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: Web
+  labels:
+    Tier: Web
+spec:
+  container:
+  - name: nginx
+    image: nxinx
+---
