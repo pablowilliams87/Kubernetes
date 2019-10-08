@@ -7,22 +7,22 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: App
+  name: app
   labels:
     Tier: App
 spec:
-  container:
+  containers:
   - name: busybox
     image: busybox
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Web
+  name: web
   labels:
     Tier: Web
 spec:
-  container:
+  containers:
   - name: nginx
-    image: nxinx
+    image: nginx
 ---
