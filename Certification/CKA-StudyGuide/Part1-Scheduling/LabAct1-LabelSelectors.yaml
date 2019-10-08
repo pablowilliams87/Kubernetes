@@ -12,8 +12,8 @@ metadata:
     Tier: App
 spec:
   containers:
-  - name: busybox
-    image: busybox
+  - name: nginx
+    image: nginx
 ---
 apiVersion: v1
 kind: Pod
