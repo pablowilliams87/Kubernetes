@@ -1,0 +1,16 @@
+---
+# Lab Activity 3 - Resource Limits
+# Create a new namespace called "tenant-b-100mi"
+## kubectl create namespace tenant-b-100mi
+# Create a memory limit of 100Mi for this namespace
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: quota-100mi
+spec:
+  limits:
+  - max:
+      memory: 100mi
+    type: container
+--
+# Create a pod with a memory request of 150Mi, ensure the limit has been set by verifying you get a error message.
