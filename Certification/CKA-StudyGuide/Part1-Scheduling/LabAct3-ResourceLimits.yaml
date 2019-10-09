@@ -7,6 +7,7 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: quota-100mi
+  namespace: tenant-b-100mi
 spec:
   limits:
   - max:
@@ -14,3 +15,15 @@ spec:
     type: Container
 ---
 # Create a pod with a memory request of 150Mi, ensure the limit has been set by verifying you get a error message.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-150mi
+spec:
+  containers:
+  - name: nginx-150mi
+    image: nginx
+    resources:
+      requests:
+        memory: 150Mi
+---
