@@ -13,7 +13,8 @@ spec:
   - name: static-pod
     image: nginx
 ---
-# Configure the kubelet service on this worker node to create pods from /etc/staticpods
+# Configure the kubelet service on this worker node to create pods
+# from /etc/staticpods
 ## Configure your kubelet on the node to use this directory by running it
 ## with --pod-manifest-path=/etc/kubelet.d/ argument or add the
 ## staticPodPath: <the directory> field in the KubeletConfiguration file
