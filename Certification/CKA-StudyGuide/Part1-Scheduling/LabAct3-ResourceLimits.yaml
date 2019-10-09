@@ -10,7 +10,7 @@ metadata:
 spec:
   limits:
   - max:
-      memory: 100mi
-    type: container
---
+      memory: 100Mi
+    type: Container
+---
 # Create a pod with a memory request of 150Mi, ensure the limit has been set by verifying you get a error message.
