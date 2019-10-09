@@ -1,0 +1,21 @@
+---
+# Lab Activity 5 - Schedule Pod without a scheduler
+# On one of the worker nodes:
+# Create the directory /etc/staticpods
+## mkdir /etc/staticpods
+# Create a pod manifest file in this directory
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-pod
+spec:
+  containers:
+  - name: static-pod
+    image: nginx
+---
+# Configure the kubelet service on this worker node to create pods from /etc/staticpods
+## Configure your kubelet on the node to use this directory by running it
+## with --pod-manifest-path=/etc/kubelet.d/ argument or add the
+## staticPodPath: <the directory> field in the KubeletConfiguration file
+### sudo systemctl daemon-reload
+### sudo systemctl restart kubelet
