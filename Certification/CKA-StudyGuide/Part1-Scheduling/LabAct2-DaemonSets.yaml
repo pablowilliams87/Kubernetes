@@ -2,21 +2,22 @@
 # Lab Activity 2 - Daemonsets
 # Deploy a Daemonset that leverages the nginx image
 # Verify the daemonset has been created successfully
-apiVersion: v1
-kind: Daemonset
+apiVersion: apps/v1
+kind: DaemonSet
 metadata:
   name: nginx-ds
   labels:
     app: nginx-ds
 spec:
-  selectors:
+  selector:
     matchLabels:
-      name: nginx-dx
+      app: nginx-ds
   template:
     metadata:
-      name: nginx-ds
       labels:
         app: nginx-ds
-    containers:
-    - name: nginx
-      image: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+---
