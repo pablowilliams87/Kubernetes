@@ -1,0 +1,13 @@
+---
+# Lab Activity 4 - Multiple Schedulers
+# Assume another scheduler “CustomScheduler” has been created in your environment. Configure a pod to use this scheduler.
+# Validate the pod is using this scheduler.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-customscheduler
+spec:
+  schedulerName: CustomScheduler
+  containers:
+  - name: nginx-customscheduler
+    image: nginx
