@@ -18,7 +18,8 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-150mi
+  name: nginx-150mi
+  namespace: tenant-b-100mi
 spec:
   containers:
   - name: nginx-150mi
