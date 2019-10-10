@@ -14,9 +14,9 @@ spec:
   - name: raid-toleration
     image: nginx
   tolerations:
-    key: "App"
+  - key: "App"
     value: "Raid"
-    operator: "Exists"
+    operator: "Equal"
     effect: "NoSchedule"
 ---
 # Modify toleration effects and observe scheduling behaviour
