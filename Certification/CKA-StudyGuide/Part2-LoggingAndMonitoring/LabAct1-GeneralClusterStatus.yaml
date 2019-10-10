@@ -1,0 +1,4 @@
+# Lab Activity 1 - General cluster status
+# Leveraging a single kubectl command acquire the current status
+# for the Scheduler, Controller-Manager and etcd components
+## kubectl get componentstatus
