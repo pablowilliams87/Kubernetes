@@ -3,7 +3,7 @@
 # Create a pod manifest file using the nginx image which will create
 # a pod called “nginx-web” (Alternatively do this via kubectl run)
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
   name: nginx-web
 spec:
