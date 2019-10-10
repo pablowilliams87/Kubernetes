@@ -24,7 +24,12 @@ spec:
 ---
 # Add tolerationSeconds to the pods toleration spec
 ## kubectl edit po/raid-toleration
-## adding tolerationSeconds: 60
+## modify
+##   tolerations:
+##   - key: "App"
+##     operator: "Exists"
+##     effect: "NoExecute"
+##     tolerationSeconds: 60
 ---
 # Place additional taints on the node
 ## kubectl taint node worker-1 App=Fuji:NoSchedule
