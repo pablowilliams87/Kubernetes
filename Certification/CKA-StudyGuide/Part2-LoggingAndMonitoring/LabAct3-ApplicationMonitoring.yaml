@@ -3,8 +3,13 @@
 # Run the following:
 # kubectl apply -f https://raw.githubusercontent.com/David-VTUK/CKAExampleYaml/master/nginx-svc-and-deployment.yaml
 # Gather the events from a given pod from this deployment
+## kubectl describe pods
 # Gather the events from the replicaset created from this deployment
+## kubectl describe replicaset
 # Gather the events from the service from this deployment
+## kubectl describe service/nginx-service
 # Acquire the list of endpoints associated with this service
+## kubectl describe service/nginx-service | grep -i endpoints
+## Endpoints:         10.32.0.4:80,10.32.0.7:80,10.32.0.8:80
 # How are the endpoints determined?
 # Which kubectl command would display all the logs from the pods created from this deployment?
