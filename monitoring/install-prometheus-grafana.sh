@@ -18,3 +18,5 @@ helm install -f grafana-values.yml stable/grafana \
 kubectl get pods -n monitoring
 kubectl apply -f grafana-ext.yml -n monitoring
 
+## To delete helm package
+## helm delete prometheus --purge
