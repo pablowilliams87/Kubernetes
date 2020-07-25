@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    storage: prometheus
+  name: prometheus-volume
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  nfs:
+    path: /datafiles/nfs/prometheus
+    server: nfs.server
+  persistentVolumeReclaimPolicy: Retain
+status: {}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    storage: prometheus-alertmanager
+  name: prometheus-alertmanager-volume
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  nfs:
+    path: /datafiles/nfs/prometheus_alertmanager
+    server: nfs.server
+  persistentVolumeReclaimPolicy: Retain
+status: {}
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   labels:
+#     storage: prometheus-alertbuffer
+#   name: prometheus-alertbuffer-volume
+# spec:
+#   accessModes:
+#   - ReadWriteOnce
+#   capacity:
+#     storage: 10Gi
+#   nfs:
+#     path: /prometheus_alertbuffer
+#     server: nfs.server
+#   persistentVolumeReclaimPolicy: Retain
+# status: {}
