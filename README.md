@@ -31,3 +31,14 @@ skip_verify = true
 from_address = xxxx@gmail.com
 from_name = Grafana
 ```
+
+## Storage
+### Rook (Ceph Storage)
+
+```
+git clone --single-branch --branch release-1.3 https://github.com/rook/rook.git
+cd rook/cluster/examples/kubernetes/ceph
+kubectl create -f common.yaml
+kubectl create -f operator.yaml
+kubectl create -f cluster.yaml
+```
