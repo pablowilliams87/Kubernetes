@@ -4,8 +4,10 @@
 ### Bash-Completion
 Configure kubectl bash completion
 ```
+# Setup autocomplete into the current shell
 source /usr/share/bash-completion/bash_completion
 source <(kubectl completion bash)
+# Setup autocomplete permanently
 echo source /usr/share/bash-completion/bash_completion >> ~/.bashrc
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 ```
