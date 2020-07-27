@@ -44,3 +44,10 @@ kubectl create -f operator.yaml
 vim cluster.yaml # Adjust cluster size
 kubectl create -f cluster.yaml
 ```
+
+Deploy toolbox and get ceph status
+```
+kubectl create -f toolbox.yaml
+kubectl -n rook-ceph exec -it $(kubectl -n rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') bash
+ceph -s
+```
