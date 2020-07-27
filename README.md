@@ -51,3 +51,9 @@ kubectl create -f toolbox.yaml
 kubectl -n rook-ceph exec -it $(kubectl -n rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') bash
 ceph -s
 ```
+
+Create the storage class
+```
+vim rook/cluster/examples/kubernetes/ceph/csi/rbd/storageclass.yaml   # Edit cluster size
+kubectl create -f cluster/examples/kubernetes/ceph/csi/rbd/storageclass.yaml
+```
