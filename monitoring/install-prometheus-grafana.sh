@@ -7,12 +7,10 @@ kubectl apply -f prometheus-pv.yaml
 kubectl get pv
 
 helm repo update
-helm install stable/prometheus \
-    --namespace monitoring \
-    --name prometheus
+helm install prometheus stable/prometheus \
+    --namespace monitoring
 
-helm install -f grafana-values.yml stable/grafana \
-	--name grafana \
+helm install grafana -f grafana-values.yml stable/grafana \
 	--namespace monitoring
 
 kubectl get pods -n monitoring
