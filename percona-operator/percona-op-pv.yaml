@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    storage: percona
+  name: percona-volume-2
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 6Gi
+  nfs:
+    path: /datafiles/nfs/percona-2
+    server: nfs.server
+  persistentVolumeReclaimPolicy: Retain
+status: {}
