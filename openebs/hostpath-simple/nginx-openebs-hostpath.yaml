@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-openebs-hostpath2
+spec:
+  volumes:
+    - name: nginx-openebs-hostpath2
+      persistentVolumeClaim:
+        claimName: openebs-hostpath-pvc2
+  containers:
+    - name: task-pv-container2
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-openebs-hostpath2
