@@ -6,11 +6,14 @@ kubectl get ns
 kubectl apply -f prometheus-pv.yaml
 kubectl get pv
 
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
-helm install prometheus stable/prometheus \
+helm install prometheus prometheus-community/prometheus
     --namespace monitoring
 
-helm install grafana -f grafana-values.yml stable/grafana \
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana/grafana -f grafana-values.yml stable/grafana \
 	--namespace monitoring
 
 kubectl get pods -n monitoring
