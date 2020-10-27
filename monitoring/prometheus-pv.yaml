@@ -10,9 +10,10 @@ spec:
   - ReadWriteOnce
   capacity:
     storage: 10Gi
-  nfs:
-    path: /datafiles/nfs/prometheus
-    server: nfs.server
+#  nfs:
+  hostPath:
+    path: /datafiles/monitoring/prometheus
+#    server: nfs.server
   persistentVolumeReclaimPolicy: Retain
 status: {}
 ---
@@ -27,9 +28,10 @@ spec:
   - ReadWriteOnce
   capacity:
     storage: 10Gi
-  nfs:
-    path: /datafiles/nfs/prometheus_alertmanager
-    server: nfs.server
+#  nfs:
+  hostPath:
+    path: /datafiles/monitoring/prometheus_alertmanager
+#    server: nfs.server
   persistentVolumeReclaimPolicy: Retain
 status: {}
 # ---
